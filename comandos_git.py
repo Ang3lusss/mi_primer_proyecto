@@ -11,3 +11,11 @@
 
 #git add . Agrega todos los archivos al repo (es aconsejable git add "nombre del arvhivo")
 #git commit -m "Mensaje" Crea un commit con los archivos agregados (etiqueta de info)
+
+
+# letras en git Letra	Significado
+# M	Modificado
+# A	Agregado (Added con git add)
+# D	Eliminado (Deleted)
+# U	Archivo nuevo sin seguimiento (Untracked)""
+# se agregaron cosas nuevas 
