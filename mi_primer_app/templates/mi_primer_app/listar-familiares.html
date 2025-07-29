@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Familiares</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .card-title {
+            font-weight: bold;
+        }
+        .card-subtitle {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center mb-4">📋 Lista de Familiares</h1>
+
+    {% for familiar in familiares %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ familiar.nombre }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ familiar.parentesco }}</h6>
+                <p class="card-text">
+                    Edad: {{ familiar.edad }} años<br>
+                    Fecha de nacimiento: {{ familiar.fecha_nacimiento }}
+                </p>
+            </div>
+        </div>
+    {% empty %}
+        <p class="text-center text-muted">No se encontraron familiares.</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>
