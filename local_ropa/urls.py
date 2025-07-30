@@ -1,5 +1,5 @@
 """
-URL configuration for mi_primer_proyecto project.
+URL configuration for local_ropa project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from app_local_ropa.views import inicio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('mi_primer_app.urls') ),
+    path('', inicio, name='inicio'),
+    path('', include('app_local_ropa.urls') ),
 ]

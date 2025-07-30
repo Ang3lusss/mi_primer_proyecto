@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Buscar Prenda - Not Today{% endblock %}
+
+{% block contenido %}
+    <h2>Buscar prenda por nombre</h2>
+    <form method="get">
+        <input type="text" name="nombre" placeholder="Nombre de la prenda">
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if resultados %}
+        <h3>Resultados:</h3>
+        <ul>
+            {% for prenda in resultados %}
+                <li>{{ prenda.nombre }} - {{ prenda.tipo }} - ${{ prenda.precio }}</li>
+            {% endfor %}
+        </ul>
+    {% elif request.GET.nombre %}
+        <p>No se encontraron prendas con ese nombre.</p>
+    {% endif %}
+{% endblock %}
