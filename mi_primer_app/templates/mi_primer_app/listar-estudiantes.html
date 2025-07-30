@@ -1,0 +1,17 @@
+{% extends "padre.html" %}
+
+{% block title %}Listar Estudiantes{% endblock title %}
+
+
+{% block Principal%}
+<h2>Listado Estudiantes</h2>
+
+
+<ul>
+    {% for estudiante in estudiantes%}
+        <li>{{ estudiante.nombre }} {{estudiante.apellido}}</li>
+    {% empty %}
+        <li> No Hay cursos disponibles.</li>
+    {% endfor %}
+</ul>
+{% endblock Principal %}

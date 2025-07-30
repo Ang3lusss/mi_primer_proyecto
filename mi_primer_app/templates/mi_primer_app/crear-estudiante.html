@@ -1,0 +1,14 @@
+{% extends "padre.html" %}
+
+{% block title %}Crear Estudiante{% endblock title %}
+
+{%block Principal%}
+<h2> Crear Estudiante</h2>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">Crear Estudiante</button>
+
+</form>
+{%endblock Principal%}
