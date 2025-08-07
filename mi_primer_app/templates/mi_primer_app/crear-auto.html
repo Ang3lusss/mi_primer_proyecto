@@ -1,0 +1,14 @@
+{% extends "padre.html" %}
+
+{% block title %}Crear Auto{% endblock title %}
+
+{%block Principal%}
+<h2> Crear Auto</h2>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">Guardar Auto</button>
+
+</form>
+{%endblock Principal%}

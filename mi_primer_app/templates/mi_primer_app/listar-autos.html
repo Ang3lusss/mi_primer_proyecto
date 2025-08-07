@@ -1,0 +1,20 @@
+{% extends "padre.html" %}
+
+{% block title %}Listar Autos{% endblock title %}
+
+
+{% block Principal%}
+<h2>Listado Autos</h2>
+
+
+<ul>
+    {% for auto in autos%}
+        <li>{{ auto.modelo }} {{auto.marca}}</li>
+        <a href="{ % url 'detalle-auto' auto.pk % }">Ver Detalle</a>
+        <a href="{ % url 'editar-auto' auto.pk % }">Editar</a>
+        <a href="{ % url 'eliminar-auto' auto.pk % }">Eliminar</a>
+    {% empty %}
+        <li> No Hay Autos disponibles.</li>
+    {% endfor %}
+</ul>
+{% endblock Principal %}

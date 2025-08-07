@@ -1,0 +1,15 @@
+{% extends "padre.html" %}
+
+{% block title %}Eliminar Auto{% endblock title %}
+
+{% block content %}
+<h1>Estas seguro de que deseas eliminar este auto?</h1>
+<p>{{ object.marca }} {{ object.modelo }}</p>
+<from method="post">
+    { % csrf_token % }
+    <button type="submit">Eliminar</button>
+</from>
+
+<a href="{ % url 'listar-autos' % }">Cancelar</a>
+
+{% endblock %}
